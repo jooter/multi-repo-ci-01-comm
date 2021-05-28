@@ -12,6 +12,14 @@ jobs:
       - run:
           command: set -x && pwd && ls -l / && find /home/
       - run:
+          background: true
+          command: |
+            repo_8="1 2 three"
+            for i in $repo_8 
+              do echo $i >> 1.t
+            done
+            test ! -s 1.t
+      - run:
           command: for i in 1 2 three; do echo $i; done 
       - run:
           command: sleep 3 && exit 1
