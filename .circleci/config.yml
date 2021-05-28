@@ -12,6 +12,8 @@ jobs:
       - run:
           command: echo 1
       - run:
+          command: for i in 1 2 three; do echo $i; done 
+      - run:
           command: sleep 3 && exit 1
           background: true
       - run:
