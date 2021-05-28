@@ -10,7 +10,7 @@ jobs:
       - image: cimg/go:1.16
     steps:
       - run:
-          command: pwd && ls -l / 
+          command: set -x && pwd && ls -l / && /home/circleci/go/src/github.com
       - run:
           command: for i in 1 2 three; do echo $i; done 
       - run:
