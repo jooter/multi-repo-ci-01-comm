@@ -10,7 +10,7 @@ jobs:
       - image: cimg/go:1.16
     steps:
       - run:
-          command: echo 1
+          command: pwd && ls -l / 
       - run:
           command: for i in 1 2 three; do echo $i; done 
       - run:
