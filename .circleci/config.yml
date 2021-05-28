@@ -10,7 +10,13 @@ jobs:
       - image: cimg/go:1.16
     steps:
       - run:
-          command: date
+          command: echo 1
+      - run:
+          command: sleep 3 && exit 1
+          background: true
+      - run:
+          command: sleep 5 && date
+
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
