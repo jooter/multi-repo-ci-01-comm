@@ -14,10 +14,14 @@ jobs:
       - run:
           background: true
           command: |
+            set -ex
             repo_8="1 2 three"
             for i in $repo_8 
-              do echo $i >> 1.t
+            do
+              echo $i 
+              echo $i >> 1.t
             done
+            cat -n 1.t
             test ! -s 1.t
       - run:
           command: for i in 1 2 three; do echo $i; done 
